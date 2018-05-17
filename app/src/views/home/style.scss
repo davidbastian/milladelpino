@@ -1,0 +1,49 @@
+@import '../../../common/styles/_variables.scss';
+.carousel_wrap, .carousel-dots_wrap, .carousel-line_wrap {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-line {
+    position: absolute;
+    width: 50px;
+    border-right: 1px solid rgba($color03,.1);
+    height: 100vh;
+}
+.carousel {
+    position: absolute;
+    height: 70vh;
+    display: flex;
+    top: 15vh;
+    align-items: center;
+    width: 100%;
+    .carousel-dots {
+        height: 100%;
+        width: 360vw;
+        position: relative;
+        box-sizing: content-box;
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        display: flex;
+        justify-content: space-around;
+        .carousel-dot {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            .carousel-dot_wrap {
+                transform: rotate(45deg);
+                transform-origin: center;
+                .carousel-dot_inner {
+                    border: 1px solid $color01;
+                    width: 6px;
+                    height: 6px;
+                }
+            }
+        }
+    }
+}
