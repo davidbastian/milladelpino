@@ -81,7 +81,6 @@ class Carousel {
             `;
             image = toHTML(image);
             self.carousel.querySelector('.carousel-images').appendChild(image);
-
         }
 
         this.el.appendChild(self.carousel);

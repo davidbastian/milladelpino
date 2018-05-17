@@ -1,5 +1,7 @@
 @import '../../../common/styles/_variables.scss';
-.carousel_wrap, .carousel-dots_wrap, .carousel-line_wrap {
+.carousel_wrap,
+.carousel-dots_wrap,
+.carousel-line_wrap {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -9,9 +11,10 @@
 .carousel-line {
     position: absolute;
     width: 50px;
-    border-right: 1px solid rgba($color03,.1);
+    border-right: 1px solid rgba($color03, .1);
     height: 100vh;
 }
+
 .carousel {
     position: absolute;
     height: 70vh;
