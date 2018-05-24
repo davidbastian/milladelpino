@@ -97,29 +97,16 @@ class Carousel {
 
             image = toHTML(image);
 
-           // self.carousel.querySelector('.carousel-images_wrap').appendChild(image);
+            self.carousel.querySelector('.carousel-images_wrap').appendChild(image);
 
         }
 
-        self.carousel.querySelector('.carousel-images_wrap').style.backgroundImage = "url(" + images[0].url + ")";
+        // self.carousel.querySelector('.carousel-images_wrap').style.backgroundImage = "url(" + images[0].url + ")";
 
         this.el.appendChild(self.carousel);
 
         this.setInteraction(images);
 
-    }
-
-    isCollide(a, b) {
-        var aRect = a.getBoundingClientRect();
-        var bRect = b.getBoundingClientRect();
-        if (
-            aRect.left + aRect.width < bRect.left ||
-            aRect.left > bRect.left + bRect.width
-        ) {
-            return false;
-        } else {
-            return true;
-        }
     }
 
     setInteraction(images) {
@@ -187,11 +174,11 @@ class Carousel {
                 x: -linePos
             });
 
-            self.checkCollision(carouselDots.querySelectorAll('.carousel-dot'), carouselLine, images);
+            self.checkCollision(carouselDots.querySelectorAll('.carousel-dot'), carouselLine, images, carouselImages);
         }
     }
 
-    checkCollision(dots, line, images) {
+    checkCollision(dots, line, images, carouselImages) {
         const self = this;
         const linePos = line.getBoundingClientRect().right - 5;
 
@@ -210,12 +197,10 @@ class Carousel {
             let rotate = 0;
 
             if ((percent > 0) && (percent < 100)) {
-                console.log(percent, i);
+              //  console.log(percent, i);
                 scale = 1 + (percent * 0.0015);
                 rotate = (percent * 0.005);
-
-                self.carousel.querySelector('.carousel-images_wrap').style.transform = "scale(" + scale + ") rotate(" + rotate + "deg)";
-
+                carouselImages[i].style.transform = "scale(" + scale + ") rotate(" + rotate + "deg)";
 
                 if (percent < 20) {
                     op = (percent * 100) / 20;
@@ -226,25 +211,24 @@ class Carousel {
                 }
 
                 if ((op >= 0) && (op < 100)) {
-                    self.carousel.querySelector('.carousel-images_wrap').style.backgroundImage = "url(" + images[i].url + ")";
+                    carouselImages[i].style.backgroundImage = "url(" + images[i].url + ")";
                     opacity = op * 0.01;
-
-
                 }
                 if (op < 0) {
                     opacity = 0;
 
                 }
                 if (op >= 100) {
-
                     opacity = 1;
-
                 }
 
-                console.log(opacity);
 
-                self.carousel.querySelector('.carousel-images_wrap').style.opacity = opacity;
+                carouselImages[i].style.opacity = opacity;
 
+
+            }else {
+                carouselImages[i].style.transform = "scale(" + 1+ ") rotate(" + 0 + "deg)";
+                carouselImages[i].style.opacity = 0;
 
             }
 
