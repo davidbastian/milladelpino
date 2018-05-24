@@ -26,7 +26,7 @@ class AppView {
             <header>
                 <a class="header-logo" id="logo">milladelpino</a>
                 <div class="intro">
-                    <p>Medlab is an educational app for the Museum of Science and Industry in Chicago. It lets students play the part of a medical professional, diagnosing diseases, prescribing treatment, and monitoring results. </p>
+                    <p>Human is washing you why halp oh the horror flee scratch hiss bite. Knock dish off table head butt cant eat out of my own dish i cry and cry and cry unless you pet me.</p>
                 </div>
             </header>
         `;
